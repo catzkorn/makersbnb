@@ -5,7 +5,7 @@ test database
 run:
 ```
 psql -c 'CREATE DATABASE makersbnb_test;'
-psql -d makersbnb -f db/migrations/test_database_setup.sql
+psql -d makersbnb_test -f db/migrations/test_database_setup.sql
 ```
 
 
