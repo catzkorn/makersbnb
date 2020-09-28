@@ -13,4 +13,3 @@ CREATE TABLE spaces(
   price MONEY,
   userid UUID REFERENCES users(id)
   );
-
