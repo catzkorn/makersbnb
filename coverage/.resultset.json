@@ -5,33 +5,43 @@
         "lines": [
           1,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/charlotte/Makers/full-course/week-five/makersbnb/lib/database_connection.rb": {
+        "lines": [
+          1,
           null,
-          0,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
+          1,
+          2,
           null,
+          null,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1601306731
+    "timestamp": 1601307052
   }
 }
