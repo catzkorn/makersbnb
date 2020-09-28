@@ -1,7 +1,37 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/charlotte/Makers/full-course/week-five/makersbnb/spec/unit/database_connection_spec.rb": {
+        "lines": [
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      }
     },
-    "timestamp": 1601305492
+    "timestamp": 1601306731
   }
 }
