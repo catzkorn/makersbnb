@@ -8,8 +8,9 @@ CREATE TABLE users(
 
 CREATE TABLE spaces(
   id SERIAL PRIMARY KEY, 
-  name VARCHAR(30) NOT NULL,
-  description VARCHAR(300) NOT NULL,
+  name VARCHAR(30),
+  description VARCHAR(240) NOT NULL,
+  time TIMESTAMP WITH TIME ZONE NOT NULL,
   price MONEY,
   userid UUID REFERENCES users(id)
   );
