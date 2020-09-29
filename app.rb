@@ -1,8 +1,8 @@
 require "sinatra/base"
 require './lib/space_manager'
-
-
+require './lib/database_connection'
 class Makersbnb < Sinatra::Base
+  DatabaseConnection.setup('makersbnb')
 
   get '/spaces/new' do
     erb :'spaces/new'
