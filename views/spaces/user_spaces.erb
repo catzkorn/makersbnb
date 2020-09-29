@@ -1,0 +1,15 @@
+<h1>List of your spaces!</h1>
+
+<ul>
+  <% @user_spaces.each do |space| %>
+    <%= space.name %> <br>
+    <%= space.price %> <br>
+    <%= space.description %><br>
+    <br>
+
+  <% end %>
+</ul>
+
+<form action="/spaces" method="get">
+  <input type="submit" value="Back to Homepage" />
+</form>

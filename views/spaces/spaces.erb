@@ -1,0 +1,19 @@
+<h1>List of all spaces!</h1>
+
+<ul>
+  <% @spaces.each do |space| %>
+    <%= space.name %> <br>
+    <%= space.price %> <br>
+    <%= space.description %><br>
+    <br>
+
+  <% end %>
+</ul>
+
+<form action="/spaces/new" method="get">
+  <input type="submit" value="Add Space" />
+</form>
+
+<form action="/spaces/:userid" method="get">
+  <input type="submit" value="View My Spaces" />
+</form>
