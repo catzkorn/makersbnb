@@ -24,4 +24,13 @@ describe SpaceManager do
     end
   end
 
+  # describe '#.user_spaces' do
+  #   it 'returns a list of all the spaces' do
+  #     SpaceManager.create(test)
+  #     SpaceManager.create(test2)
+  #     list_spacemanager_all = SpaceManager.all
+  #     expect(list_spacemanager_all[1].name).to eq 'manchester flat'     
+  #   end
+  # end
+
 end 

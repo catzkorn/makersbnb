@@ -22,4 +22,10 @@ class SpaceManager
   #   Space.new(result[0]['name'], result[0]['price'], result[0]['description'], result[0]['space_id'], result[0]['user_id'])
   # end 
 
+  # def self.user_spaces(user_id)
+  #   @connection = PG.connect(dbname: 'makersbnb_test')
+  #   result = @connection.exec("SELECT * FROM spaces WHERE userid = #{user_id};")
+  #   result.map { |space| Space.new(space['name'], space['price'], space['description'], space['space_id'], space['user_id']) }
+  # end
+
 end 

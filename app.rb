@@ -19,12 +19,10 @@ class Makersbnb < Sinatra::Base
     erb :'/spaces/spaces'
   end
 
-
-
-
-
-
-
+  # get '/spaces/:userid' do
+  #   @user_spaces = SpaceManager.user_spaces(params[:userid])
+  #   erb :'spaces/user_spaces'
+  # end
 
   run! if app_file == $0
 end
