@@ -1,5 +1,7 @@
 require "sinatra/base"
 require "./database_connection_setup"
+require "./lib/user_management"
+require "./lib/user"
 
 class Makersbnb < Sinatra::Base
   get "/" do
@@ -7,6 +9,8 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/signup" do
+    UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
+
     redirect("/spaces")
   end
 
