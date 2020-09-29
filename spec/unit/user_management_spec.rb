@@ -9,4 +9,13 @@ describe UserManagement do
       expect(UserManagement.all[0].name).to eq "test_name"
     end
   end
+
+  describe "#.log_in" do 
+    it 'allows a user to log in with correct login credentials' do
+      user = UserManagement.sign_up(test_user)
+      authenticated_user = UserManagement.login('test@test.com', 'password123')
+      expect(authenticated_user.email).to eq "test@test.com"
+    end 
+  end
+
 end
