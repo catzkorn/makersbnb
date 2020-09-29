@@ -4,7 +4,6 @@ require "./lib/user_management"
 require "./lib/user"
 
 class Makersbnb < Sinatra::Base
-
   enable :sessions
 
   get "/" do
@@ -21,14 +20,14 @@ class Makersbnb < Sinatra::Base
     "Welcome test_name"
   end
 
-  get "/sessions/new" do 
+  get "/sessions/new" do
     erb(:login)
-  end 
+  end
 
-  post "/sessions" do 
+  post "/sessions" do
     user = UserManagement.login(params[:email], params[:password])
-    session[:user] = user.id
-    redirect('/spaces')
+    session[:user] = user.user_id
+    redirect("/spaces")
   end
 
   run! if app_file == $0
