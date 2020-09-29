@@ -1,4 +1,5 @@
 require_relative "./database_connection"
+require_relative 'user'
 
 class UserManagement
   def self.all
@@ -16,25 +17,19 @@ class UserManagement
   end
 
   def self.login(email, password)
-    user = get_user(email)
-    p user
-    return false if user == false 
-    return false unless password_match?(email, password)
-    User.new(user['email'], user['name'], user['password'], user['id'])
+    data = UserManagement.password_match?(email, password)
+    raise 'password doesn\'t match' if data == false
+    User.new(data['email'], data['name'], data['password'], data['id'])
   end
 
-  private 
-
-  def self.get_user(email)
-    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';") 
-    false unless result.count == 1
-    result[0]
-  end 
+  # def self.get_user(email)
+  #   result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';") 
+  #   result.count == 1 ? result[0]: false
+  # end 
 
   def self.password_match?(email, user_password)
    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}' AND password = crypt('#{user_password}', password);")
-    p result
-    false unless result.count == 1 
+   result.count == 1 ? result[0]: false
   end 
 
 end
