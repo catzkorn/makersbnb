@@ -5,9 +5,8 @@ feature 'Creates a new space' do #first feature test pretending login does not e
     fill_in('price', with: '35')
     fill_in('description', with: 'a beautiful london flat in central london lol')
     click_button 'Create space'
-    sleep(5)
+    sleep(1)
     expect(page).to have_content('london flat')
-
   end
 end
 

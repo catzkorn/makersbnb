@@ -1,4 +1,4 @@
-<h1>These are your current spaces!</h1>
+<h1>List of all spaces!</h1>
 
 <ul>
   <% @spaces.each do |space| %>
@@ -9,3 +9,7 @@
 
   <% end %>
 </ul>
+
+<form action="/spaces/new" method="get">
+  <input type="submit" value="Add Space" />
+</form>
