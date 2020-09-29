@@ -1,16 +1,23 @@
 require 'space_manager'
 require 'space'
 
-RSpec.describe SpaceManager do 
-
-  describe '.create' do 
+describe SpaceManager do 
+  let(:test){Space.new('london flat', '35', 'a beautiful flat in central london lol')}
+  describe '#.create' do 
     it 'creates new space with Space class passed in as parameter' do 
-      space = Space.new("Test", "90.00", "Test listing")
-      space1 = Space.new("Test2", "00.00", "Test2 listing") 
-      SpaceManager.create(space)
-      SpaceManager.create(space1)
-      expect(SpaceManager.all.length).to eq 2
+      space = SpaceManager.create(test)
+      expect(space.name).to eq 'london flat'
+      expect(space.price).to eq '$35.00'
+      expect(space.description).to eq 'a beautiful flat in central london lol'
+      expect(space.user_id).to eq nil
+      expect(space.space_id).to eq nil
     end 
+  end
+
+  describe '#.all' do
+    it 'returns a list of all the spaces' do
+      
+    end
   end
 
 end 
