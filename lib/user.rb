@@ -1,10 +1,10 @@
 class User
-  attr_reader :email, :name, :password, :id
+  attr_reader :email, :name, :password, :user_id
 
-  def initialize(email, name, password, id = nil)
+  def initialize(email, name, password, user_id = nil)
     @email = email
     @name = name
     @password = password
-    @id = id
+    @user_id = user_id
   end
 end
