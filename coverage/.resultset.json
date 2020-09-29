@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/connorworthington/Development/week_5/bnb/makersbnb/spec/unit/space_manager_spec.rb": {
+      "/Users/farhaan/Projects/week5/makersbnb/spec/unit/space_manager_spec.rb": {
         "lines": [
           1,
           1,
@@ -21,7 +21,7 @@
           null
         ]
       },
-      "/Users/connorworthington/Development/week_5/bnb/makersbnb/lib/space_manager.rb": {
+      "/Users/farhaan/Projects/week5/makersbnb/lib/space_manager.rb": {
         "lines": [
           1,
           null,
@@ -41,22 +41,45 @@
           null
         ]
       },
-      "/Users/connorworthington/Development/week_5/bnb/makersbnb/lib/space.rb": {
+      "/Users/farhaan/Projects/week5/makersbnb/lib/space.rb": {
         "lines": [
           1,
           null,
           1,
           null,
           1,
-          2,
-          2,
-          2,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/farhaan/Projects/week5/makersbnb/spec/unit/space_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          4,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1601311632
+    "timestamp": 1601371600
   }
 }
