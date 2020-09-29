@@ -33,7 +33,7 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/spaces/new/add' do
-    new_space = Space.new(params[:name], params[:price], params[:description])
+    new_space = Space.new(params[:name], params[:price], params[:description], nil, session[:user])
     SpaceManager.create(new_space)
     redirect '/spaces'
   end
@@ -43,10 +43,10 @@ class Makersbnb < Sinatra::Base
     erb :'/spaces/spaces'
   end
 
-  # get '/spaces/:userid' do
-  #   @user_spaces = SpaceManager.user_spaces(params[:userid])
-  #   erb :'spaces/user_spaces'
-  # end
+  get '/spaces/:userid' do
+    @user_spaces = SpaceManager.user_spaces(session[:user])
+    erb :'spaces/user_spaces'
+  end
 
   run! if app_file == $0
 end
