@@ -1,0 +1,11 @@
+<h1>These are your current spaces!</h1>
+
+<ul>
+  <% @spaces.each do |space| %>
+    <%= space.name %> <br>
+    <%= space.price %> <br>
+    <%= space.description %><br>
+    <br>
+
+  <% end %>
+</ul>

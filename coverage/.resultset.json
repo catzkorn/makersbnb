@@ -1,7 +1,29 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/makersbnb/spec/unit/space_manager_spec.rb": {
+      "/Users/cristinafujiname/Makers/makersbnb/spec/features/all_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/cristinafujiname/Makers/makersbnb/spec/features/create_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/cristinafujiname/Makers/makersbnb/spec/unit/space_manager_spec.rb": {
         "lines": [
           1,
           1,
@@ -32,53 +54,7 @@
           null
         ]
       },
-      "/Users/student/Projects/makersbnb/lib/space_manager.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          3,
-          null,
-          null,
-          1,
-          3,
-          3,
-          3,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/makersbnb/lib/space.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          11,
-          11,
-          11,
-          11,
-          11,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/makersbnb/spec/unit/space_spec.rb": {
+      "/Users/cristinafujiname/Makers/makersbnb/spec/unit/space_spec.rb": {
         "lines": [
           1,
           null,
@@ -102,6 +78,6 @@
         ]
       }
     },
-    "timestamp": 1601375808
+    "timestamp": 1601379028
   }
 }
