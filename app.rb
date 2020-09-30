@@ -45,7 +45,6 @@ class Makersbnb < Sinatra::Base
   end
 
   get "/spaces/:userid" do
-    p session[:user]
     @user_spaces = SpaceManager.user_spaces(session[:user])
     erb :'spaces/user_spaces'
   end
