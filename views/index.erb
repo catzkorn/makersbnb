@@ -1,10 +1,18 @@
-MAKERS BNB
+<head>
+<link rel ='stylesheet' href='styles.css'>
+  <title>MAKERS BNB</title>
+  <h1>MAKERS BNB</h1>
+</head>
+<body>
 <form method="post" action="/signup">
   <input type="email" name="email" placeholder="Email">
   <input type="text" name="name" placeholder="Enter Your Name">
   <input type="password" name="password" placeholder="Password">
-  
+
   <input type="submit" value="Submit">
 </form>
 
-<a href='/sessions/new'>Login</a>
+<form method="get" action="/sessions/new">
+  <input type="submit" value="Login">
+</form>
+</body>
