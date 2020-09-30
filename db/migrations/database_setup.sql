@@ -10,9 +10,8 @@ CREATE TABLE spaces(
   id SERIAL PRIMARY KEY, 
   name VARCHAR(30),
   description VARCHAR(240) NOT NULL,
-  time TIMESTAMP WITH TIME ZONE NOT NULL,
   price MONEY,
   userid UUID REFERENCES users(id),
-  date_availability DATE 
+  date_availability DATE[] 
   );
 
