@@ -49,5 +49,14 @@ class Makersbnb < Sinatra::Base
     erb :'spaces/user_spaces'
   end
 
+  post '/sessions/destroy' do
+    session.clear
+    redirect('/logout')
+  end
+
+  get '/logout' do
+    erb :logout
+  end
+
   run! if app_file == $0
 end

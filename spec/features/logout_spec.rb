@@ -5,9 +5,8 @@ feature 'User can logout' do
     click_on("Login")
     fill_in('email', with: 'test@test.com')
     fill_in('password', with: 'password123')
-    click_on("login")
-    click_on('logout')
-    expect(page).not_to have_content ''
+    click_on("Submit")
+    click_button("logout")
     expect(page).to have_content "You're logged out"
 
   end

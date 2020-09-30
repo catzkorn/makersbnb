@@ -46,6 +46,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RubyModuleManagerSettings">
+    <option name="blackListedRootsPaths">
+      <list>
+        <option value="$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
@@ -56,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601376372565</updated>
       <workItem from="1601376374942" duration="5685000" />
+      <workItem from="1601463045862" duration="1398000" />
     </task>
     <servers />
   </component>
@@ -84,15 +92,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1577" y="187" width="1139" height="612" key="DiffContextDialog" timestamp="1601387938278">
       <screen x="1440" y="23" width="1920" height="992" />
     </state>
     <state x="1577" y="187" width="1139" height="612" key="DiffContextDialog/0.23.1440.877/1440.23.1920.992@1440.23.1920.992" timestamp="1601387938278" />
-    <state x="1802" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1601378430344">
-      <screen x="1440" y="23" width="1920" height="992" />
+    <state x="1802" y="274" width="672" height="739" key="search.everywhere.popup" timestamp="1601463316455">
+      <screen x="1440" y="0" width="1920" height="1080" />
     </state>
+    <state x="1802" y="274" width="672" height="739" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1601463316455" />
     <state x="1802" y="275" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.23.1920.992@1440.23.1920.992" timestamp="1601378430344" />
   </component>
 </project>
