@@ -27,13 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd811949-4c5d-46ff-b6b6-208328b92d5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/logout.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/spaces/spaces.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/spaces/spaces.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/features/logout_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/features/logout_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +67,7 @@
       <workItem from="1601376374942" duration="5685000" />
       <workItem from="1601463045862" duration="4456000" />
       <workItem from="1601479464495" duration="1495000" />
+      <workItem from="1601481045610" duration="465000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@ feature 'User can logout' do
     click_on("login")
     sleep(1)
     click_on('Sign out')
-    expect(page).to have_content "You have logged out"
+    expect(page).to have_content "You are logged out."
 
   end
 end
