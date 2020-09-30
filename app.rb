@@ -1,14 +1,14 @@
 require "sinatra/base"
 require "./lib/user_management"
 require "./lib/user"
-require './lib/space_manager'
-require './lib/database_connection'
+require "./lib/space_manager"
+require "./lib/database_connection"
 
 class Makersbnb < Sinatra::Base
   enable :sessions
-  DatabaseConnection.setup('makersbnb')
-  
-   get "/" do
+  DatabaseConnection.setup("makersbnb")
+
+  get "/" do
     erb(:index)
   end
 
@@ -28,25 +28,26 @@ class Makersbnb < Sinatra::Base
     redirect("/spaces")
   end
 
-  get '/spaces/new' do
+  get "/spaces/new" do
     erb :'spaces/new'
   end
 
-  post '/spaces/new/add' do
-    new_space = Space.new(params[:name], params[:price], params[:description])
+  post "/spaces/new/add" do
+    new_space = Space.new(params[:name], params[:price], params[:description], nil, session[:user])
     SpaceManager.create(new_space)
-    redirect '/spaces'
+    redirect "/spaces"
   end
 
-  get '/spaces' do
+  get "/spaces" do
     @spaces = SpaceManager.all
     erb :'/spaces/spaces'
   end
 
-  # get '/spaces/:userid' do
-  #   @user_spaces = SpaceManager.user_spaces(params[:userid])
-  #   erb :'spaces/user_spaces'
-  # end
+  get "/spaces/:userid" do
+    p session[:user]
+    @user_spaces = SpaceManager.user_spaces(session[:user])
+    erb :'spaces/user_spaces'
+  end
 
   run! if app_file == $0
 end
