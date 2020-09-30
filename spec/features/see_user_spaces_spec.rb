@@ -1,12 +1,15 @@
-#we need to login the user 
-#then add spaces via the users account 
-#then see if that page lists those specific spaces 
-
-# feature 'user can see their own spaces' do
-#   scenario 'user clicks button to see their own spaces' do
-#     #BookmarkManager.create
-#     visit('/spaces')
-#     click_button('View My Spaces')
-#     expect(page).to contain .....
-#   end
-# end
+feature "user can see their own spaces" do
+  scenario "user clicks button to see their own spaces" do
+    user = add_test_user()
+    add_test_space(user)
+    visit("/")
+    click_link("Login")
+    fill_in(:email, with: "test@test.com")
+    fill_in(:password, with: "password123")
+    click_button("login")
+    visit("/spaces")
+    click_button("View My Spaces")
+    find("date-menu").click
+    click_on("01-01-2020")
+  end
+end
