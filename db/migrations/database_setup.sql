@@ -15,3 +15,9 @@ CREATE TABLE spaces(
   date_availability DATE[] 
   );
 
+CREATE TABLE bookings(
+  bookingid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  guestID UUID REFERENCES users(id),
+  stay_date DATE NOT NULL,
+  confirmation BOOLEAN DEFAULT false
+);
