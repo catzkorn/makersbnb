@@ -10,6 +10,6 @@ feature "user can see their own spaces" do
     visit("/spaces")
     click_button("View My Spaces")
     find("date-menu").click
-    click_on("01-01-2020")
+    select "01-01-2020", from: 'date-menu'
   end
 end
