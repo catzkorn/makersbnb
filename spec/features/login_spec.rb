@@ -5,6 +5,6 @@ feature 'log_in' do
     fill_in('email', with: 'test@test.com')
     fill_in('password', with: 'password')
     click_on("login")
-    expect(page).to have_content("Welcome Charles")
+    expect(page).to have_content("List of all spaces!")
   end 
 end 

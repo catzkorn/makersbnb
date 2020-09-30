@@ -5,6 +5,6 @@ feature 'signup' do
     fill_in('password', with: 'password123')
     fill_in('name', with: 'test_name')
     click_button('Submit')
-    expect(page).to have_content "Welcome test_name"
+    expect(page).to have_content "List of all spaces!"
   end
 end

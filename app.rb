@@ -3,10 +3,11 @@ require "./lib/user_management"
 require "./lib/user"
 require "./lib/space_manager"
 require "./lib/database_connection"
+require "./database_connection_setup.rb"
 
 class Makersbnb < Sinatra::Base
   enable :sessions
-  DatabaseConnection.setup("makersbnb")
+  whichdb
 
   get "/" do
     erb(:index)
@@ -46,6 +47,15 @@ class Makersbnb < Sinatra::Base
   get "/spaces/:userid" do
     @user_spaces = SpaceManager.user_spaces(session[:user])
     erb :'spaces/user_spaces'
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    redirect('/logout')
+  end
+
+  get '/logout' do
+    erb :logout
   end
 
   run! if app_file == $0
