@@ -3,10 +3,11 @@ require "./lib/user_management"
 require "./lib/user"
 require "./lib/space_manager"
 require "./lib/database_connection"
+require "./database_connection_setup.rb"
 
 class Makersbnb < Sinatra::Base
   enable :sessions
-  DatabaseConnection.setup("makersbnb")
+  whichdb
 
   get "/" do
     erb(:index)
