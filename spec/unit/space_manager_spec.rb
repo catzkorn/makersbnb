@@ -2,8 +2,8 @@ require "space_manager"
 require "space"
 
 describe SpaceManager do
-  let(:test) { Space.new("london flat", "35", "a beautiful flat in central london lol") }
-  let(:test2) { Space.new("manchester flat", "30", "a cottage in the outskirt") }
+  let(:test) { Space.new("london flat", "35", "a beautiful flat in central london lol", [2020-01-01, 2020-01-02]) }
+  let(:test2) { Space.new("manchester flat", "30", "a cottage in the outskirt", [2020-01-01, 2020-01-02]) }
   describe "#.create" do
     it "creates new space with Space class passed in as parameter" do
       space = SpaceManager.create(test)

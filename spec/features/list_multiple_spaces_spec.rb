@@ -1,5 +1,10 @@
 feature 'A user can list multiple spaces' do
   scenario 'user creates a few spaces and checks they are available' do
+    visit("/")
+    click_link("Login")
+    fill_in(:email, with: "test@test.com")
+    fill_in(:password, with: "password123")
+    click_button("login")
     visit('/spaces')
     click_button('Add Space')
     fill_in('name', with: 'london flat')
