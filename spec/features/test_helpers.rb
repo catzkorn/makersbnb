@@ -3,7 +3,7 @@ require "pg"
 
 def clear_spaces_table(database = "makersbnb_test")
   connection = PG.connect(dbname: database)
-  connection.exec("TRUNCATE TABLE spaces")
+  connection.exec("TRUNCATE TABLE spaces CASCADE")
 end
 
 def clear_users_table(database = "makersbnb_test")
@@ -19,5 +19,6 @@ end
 
 def add_test_space(userid, database = "makersbnb_test")
   connection = PG.connect(dbname: database)
-  result = connection.exec("INSERT INTO spaces (name, description, price, date_availability, userid) VALUES ('Buckingham Palace', 'Live like Queenie', 20.00, '{2020-01-20, 2020-02-20}', '#{userid}');")
+  result = connection.exec("INSERT INTO spaces (name, description, price, date_availability, userid) VALUES ('Buckingham Palace', 'Live like Queenie', 20.00, '{2020-01-20, 2020-02-20}', '#{userid}') RETURNING id;")
+  return result.values[0][0]
 end
