@@ -12,6 +12,7 @@ CREATE TABLE spaces(
   description VARCHAR(240) NOT NULL,
   time TIMESTAMP WITH TIME ZONE NOT NULL,
   price MONEY,
-  userid UUID REFERENCES users(id)
+  userid UUID REFERENCES users(id),
+  date_availability DATE 
   );
 
