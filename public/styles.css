@@ -70,3 +70,11 @@ h3 {
   padding-top: 20px;
 }
 
+.space_button {
+  transition-duration: 0.4s;
+}
+
+.space_button:hover {
+  background-color: black;
+  color: white;
+}
