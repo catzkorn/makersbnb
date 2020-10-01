@@ -31,3 +31,19 @@
   </li>
   <% end %>
 </ul>
+
+<div class='pending_bookings'>
+<h1>Pending Bookings!</h1>
+</div>
+
+<ul class='bookings'>
+  <% @user_spaces.each do |space| %>
+  <li>
+    <img src='/img/home.png'><br>
+    <h3><%= space.name %></h3> <br>
+    <div><%= space.price %> </div><br>
+    <div><%= space.description %></div><br>
+    <br>
+  </li>
+  <% end %>
+</ul>
