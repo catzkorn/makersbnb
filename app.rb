@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "sinatra/flash"
 require "./lib/user_management"
 require "./lib/user"
 require "./lib/space_manager"
@@ -7,15 +8,18 @@ require "./database_connection_setup.rb"
 
 class Makersbnb < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
   whichdb
+
 
   get "/" do
     erb(:index)
   end
 
   post "/signup" do
-    UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
 
+    UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
+    flash[:notice] = "Thank you for signing up - you are now logged in."
     redirect("/spaces")
   end
 
@@ -26,6 +30,7 @@ class Makersbnb < Sinatra::Base
   post "/sessions" do
     user = UserManagement.login(params[:email], params[:password])
     session[:user] = user.user_id
+    flash[:notice] = "You are logged in."
     redirect("/spaces")
   end
 
@@ -52,11 +57,8 @@ class Makersbnb < Sinatra::Base
 
   post '/sessions/destroy' do
     session.clear
-    redirect('/logout')
-  end
-
-  get '/logout' do
-    erb :logout
+    flash[:notice] = "You are logged out."
+    redirect('/sessions/new')
   end
 
   run! if app_file == $0
