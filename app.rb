@@ -69,7 +69,7 @@ class Makersbnb < Sinatra::Base
   get "/space/:spaceid/:months" do
     month = SpaceManager.month_conversion(params[:month])
     @available_dates = SpaceManager.availability(params[:spaceid], month)
-    erb :'spaces/shitty_erb'
+    erb :'spaces/dates'
   end
 
   get "/spaces/:spaceid/book" do
