@@ -3,7 +3,7 @@ feature "View specific space" do
     user = add_test_user()
     space = add_test_space(user)
     visit("/")
-    click_link("Login")
+    click_button("Login")
     fill_in(:email, with: "test@test.com")
     fill_in(:password, with: "password123")
     click_button("login")
@@ -11,6 +11,6 @@ feature "View specific space" do
     expect(page).to have_content "Buckingham Palace"
     select "September", from: "months"
     click_button("Submit")
-    expect(page).to have_button "2020, 9, 17"
+    expect(page).to have_button "2020-9-17"
   end
 end

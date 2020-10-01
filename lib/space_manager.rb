@@ -15,7 +15,7 @@ class SpaceManager
       month_array << (month_array.last + 1)
     end
 
-    result = DatabaseConnection.query("SELECT stay_date FROM bookings WHERE spaceid = $1 AND date_trunc('month', stay_date) = $2;", [space, month.strftime("%F")])
+    result = DatabaseConnection.query("SELECT stay_date FROM bookings WHERE spaceid = $1 AND date_trunc('month', stay_date) = $2 AND confirmation = true;", [space, month.strftime("%F")])
 
     result.each { |stay_date_hash|
       stay_date = Date.strptime(stay_date_hash["stay_date"], "%Y-%m-%d")

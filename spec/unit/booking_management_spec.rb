@@ -9,5 +9,10 @@ describe BookingManagement do
       booking = BookingManagement.request(Booking.new(space, user, "2020-01-20"))
       expect(booking.booking_id).not_to be nil
     end
+
+    describe "#.confirm_booking" do
+      it "allows the owner of a space to confirm a booking" do
+      end
+    end
   end
 end
