@@ -1,3 +1,7 @@
+<head>
+<link rel ='stylesheet' href='/index.css'>
+  <title>MAKERS BNB</title>
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">MakersBnB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,14 +16,17 @@
   </div>
 </nav>
 
+<div class='title'>
 <h1>List of your spaces!</h1>
+</div>
 
-<ul>
+<ul class='spaces'>
   <% @user_spaces.each do |space| %>
   <li>
-    <%= space.name %> <br>
-    <%= space.price %> <br>
-    <%= space.description %><br>
+    <img src='/img/home.png'><br>
+    <h3><%= space.name %></h3> <br>
+    <div><%= space.price %> </div><br>
+    <div><%= space.description %></div><br>
     <br>
 </li>
   <% end %>
