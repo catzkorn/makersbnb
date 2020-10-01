@@ -19,5 +19,15 @@ describe BookingManagement do
         expect(confirmed_booking.confirmed).to be_truthy
       end
     end
+
+    describe "#.pending_bookings" do
+      it "Returns all pending bookings to a user for confirmation" do
+        user = add_test_user()
+        space = add_test_space(user)
+        booking = BookingManagement.request(Booking.new(space, user, "2020-09-20"))
+        test = BookingManagement.pending_bookings(user)
+        expect(test[0]["space"].name).to eq "Buckingham Palace"
+      end
+    end
   end
 end

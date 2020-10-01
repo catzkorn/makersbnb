@@ -8,10 +8,28 @@ class BookingManagement
     Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmed"], result[0]["bookingid"])
   end
 
-  def self.confirm_booking(booking, confirmation)
+  def self.pending_bookings(userid)
+    pending_bookings = []
+
+    result = DatabaseConnection.query("SELECT bookings.*, users.*, users.name AS user_name, spaces.* FROM bookings LEFT JOIN spaces ON bookings.spaceid = spaces.id LEFT JOIN users ON bookings.guestid = users.id WHERE spaces.userid = $1 AND bookings.confirmation = false;", [userid])
+
+    result.each { |booking|
+      pending_bookings << {
+        "guest" => User.new(booking["email"], booking["user_name"]),
+        "space" => Space.new(booking["name"], booking["price"], booking["description"], booking["space_id"], booking["userid"]),
+        "booking" => Booking.new(booking["spaceid"], booking["guestid"], booking["stay_date"], booking["confirmation"] == "t", booking["bookingid"]),
+      }
+    }
+
+    return pending_bookings
+  end
+
+  def self.confirm_booking(booking_id, confirmation)
     case confirmation
     when true
-      result = DatabaseConnection.query("UPDATE bookings SET confirmation = $1 WHERE bookingid = $2 RETURNING *;", [confirmation, booking.booking_id])
+      result = DatabaseConnection.query("UPDATE bookings SET confirmation = $1 WHERE bookingid = $2 RETURNING *;", [confirmation, booking_id])
+
+      p result.values
 
       Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmation"], result[0]["bookingid"])
     when false
