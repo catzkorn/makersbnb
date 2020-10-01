@@ -8,6 +8,9 @@
     <%= space.price %> <br>
     <%= space.description %><br>
     <br>
+    <form action="/space/<%= space.space_id %>" method="get">
+    <input type="submit" name="<%= space.space_id %>" value="View Space" />
+    </form>
 
   <% end %>
 </ul>

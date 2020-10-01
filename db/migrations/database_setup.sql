@@ -10,8 +10,14 @@ CREATE TABLE spaces(
   id SERIAL PRIMARY KEY, 
   name VARCHAR(30),
   description VARCHAR(240) NOT NULL,
-  time TIMESTAMP WITH TIME ZONE NOT NULL,
   price MONEY,
   userid UUID REFERENCES users(id)
   );
 
+CREATE TABLE bookings(
+  bookingid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  spaceid SERIAL REFERENCES spaces(id),
+  guestID UUID REFERENCES users(id),
+  stay_date DATE NOT NULL,
+  confirmation BOOLEAN DEFAULT false
+);
