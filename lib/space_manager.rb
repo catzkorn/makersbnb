@@ -35,4 +35,9 @@ class SpaceManager
     result = DatabaseConnection.query("SELECT * FROM spaces WHERE userid = $1;", [user_id])
     result.map { |space| Space.new(space["name"], space["price"], space["description"], space["id"], space["userid"]) }
   end
+
+  def self.view_space(space_id)
+    result = DatabaseConnection.query("SELECT * FROM spaces WHERE id = $1;", [space_id])
+    Space.new(result[0]["name"], result[0]["price"], result[0]["description"], result[0]["id"], result[0]["userid"])
+  end
 end

@@ -58,5 +58,9 @@ class Makersbnb < Sinatra::Base
     redirect("/sessions/new")
   end
 
+  get "/space/:spaceid" do
+    @viewed_space = SpaceManager.viewed_space(session[:space_id])
+    erb :'spaces/space'
+  end
   run! if app_file == $0
 end
