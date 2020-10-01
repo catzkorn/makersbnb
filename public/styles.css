@@ -11,6 +11,12 @@ input {
   box-sizing: border-box;
 }
 
+ul {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   background-color:black;
 }
