@@ -38,3 +38,35 @@ body {
   margin: auto;
   font-family: sans-serif;
 }
+
+li {
+ display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  border-style: solid;
+  border-color: white;
+  list-style: none;
+  width: 70%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+  background-color: #ebebeb;
+  color: 000;
+  padding-top: 20px;
+  padding-bottom: 0px;
+
+}
+
+.spaces{
+  display: block;
+  margin-left: auto;
+  margin-left: auto;
+}
+
+.title {
+  margin: 20px;
+}
+
+h3 {
+  padding-top: 20px;
+}
+

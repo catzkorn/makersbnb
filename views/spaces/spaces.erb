@@ -1,3 +1,9 @@
+ <head>
+    <title>MakersBNB</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel ="stylesheet" href="/styles.css">
+  </head>
+
 <% if flash[:notice] %>
   <div class="alert alert-success" role="alert">
     <%= flash[:notice] %>
@@ -18,15 +24,19 @@
   </div>
 </nav>
 
+<div class='title'>
 <h1>List of all spaces!</h1>
+</div>
 
-<ul>
+<ul class='spaces'>
   <% @spaces.each do |space| %>
-    <%= space.name %> <br>
-    <%= space.price %> <br>
-    <%= space.description %><br>
+  <li>
+    <img src='/img/home.png'>
+    <h3><%= space.name %></h3> <br>
+    <div><%= space.price %></div> <br>
+    <div><%= space.description %></div><br>
     <br>
-
+</li>
   <% end %>
 </ul>
 

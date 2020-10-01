@@ -16,10 +16,11 @@
 
 <ul>
   <% @user_spaces.each do |space| %>
+  <li>
     <%= space.name %> <br>
     <%= space.price %> <br>
     <%= space.description %><br>
     <br>
-
+</li>
   <% end %>
 </ul>
