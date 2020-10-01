@@ -1,9 +1,25 @@
+<head>
+<link rel ='stylesheet' href='/index.css'>
+</head>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MakersBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/spaces/new">Add Space</a>
+      <a class="nav-link" href="/spaces/:userid">View My Spaces</a>
+    </div>
+  </div>
+</nav>
 
 <h1>Dates available</h1>
 
 <% @available_dates.each do |dates| %>
-  <form action="/spaces/:spaceid/book" method="get">  
+  <form action="/spaces/:spaceid/book" method="get" class='sign-in'>  
     <input type="submit" name="booking_date" value="<%=  dates.year %>-<%=  dates.month %>-<%=  dates.day %>">
     </form>
     <% end %>
