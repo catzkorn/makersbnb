@@ -51,7 +51,18 @@ class Makersbnb < Sinatra::Base
 
   get "/spaces/:userid" do
     @user_spaces = SpaceManager.user_spaces(session[:user])
+    @pending_bookings = BookingManagement.pending_bookings(session[:user])
     erb :'spaces/user_spaces'
+  end
+
+  post "/space/:userid/approve" do
+    BookingManagement.confirm_booking(params[:booking_id], true)
+    redirect "/space/:userid"
+  end
+
+  post "/space/:userid/deny" do
+    BookingManagement.confirm_booking(params[:booking_id], false)
+    redirect "/space/:userid"
   end
 
   post "/sessions/destroy" do

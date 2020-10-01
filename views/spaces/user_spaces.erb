@@ -37,13 +37,27 @@
 </div>
 
 <ul class='bookings'>
-  <% @user_spaces.each do |space| %>
+  <% @pending_bookings.each do |booking| %>
+    
   <li>
     <img src='/img/home.png'><br>
-    <h3><%= space.name %></h3> <br>
-    <div><%= space.price %> </div><br>
-    <div><%= space.description %></div><br>
+    <h3><%= booking["space"].name %></h3> <br>
+    <div><%= booking["guest"].name %> </div><br>
+    <div><%= booking["booking"].stay_date %></div><br>
     <br>
+
+    <form action="/space/:userid/approve" method="post">
+    <input type="hidden" name="booking_id" value="<%= booking["booking"].booking_id%>"/>
+    <input type="submit" value="Accept Booking" class='space_button' />
+    </form>
+    <form action="/space/:userid/deny" method="post">
+    <input type="hidden" name="booking_id" value="<%= booking["booking"].booking_id%>"/>
+    <input type="submit" value="Deny Booking" class='space_button' />
+    </form>
+
+
+
   </li>
+  
   <% end %>
 </ul>
