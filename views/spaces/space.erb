@@ -2,11 +2,13 @@
 
 <%= @viewed_space.name %>
 <%= @viewed_space.price %>
-<%= @viewed_space.description %>
+<%= @viewed_space.description %><br>
 
-<select name="date-menu" id="date-menu" >
-  <option value="01-01-2020">01-01-2020</option>
-  <option value="02-01-2020">02-01-2020</option>
-  <option value="03-01-2020">03-01-2020</option>
-  <option value="04-01-2020">04-01-2020</option>
+<form action="/space/<%= @viewed_space.space_id%>/:months" method="post">
+<select name="month" id="months" >
+  <option value="september">September</option>
+  <option value="october">October</option>
 </select>
+<input type='submit' value='Submit'>
+</form>
+

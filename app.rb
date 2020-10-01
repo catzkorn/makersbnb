@@ -62,5 +62,12 @@ class Makersbnb < Sinatra::Base
     @viewed_space = SpaceManager.view_space(params[:spaceid])
     erb :'spaces/space'
   end
+
+  post "/space/:spaceid/:months" do
+    month = month_conversion(params[:month])
+    @available_dates = SpaceManager.availability(params[:spaceid], month)
+    erb :'spaces/shitty_erb'
+  end
+
   run! if app_file == $0
 end

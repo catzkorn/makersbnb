@@ -1,13 +1,14 @@
-feature "View specific space" do 
-    scenario "A customer can view specific space" do 
+feature "View specific space" do
+  scenario "A customer can view specific space" do
     user = add_test_user()
     space = add_test_space(user)
-    visit("/") 
+    visit("/")
     click_link("Login")
     fill_in(:email, with: "test@test.com")
     fill_in(:password, with: "password123")
     click_button("login")
     click_button(space)
     expect(page).to have_content "Buckingham Palace"
-    end
-end 
+    select "September", from: "months"
+  end
+end
