@@ -11,7 +11,7 @@ CREATE TABLE spaces(
   name VARCHAR(30),
   description VARCHAR(240) NOT NULL,
   price MONEY,
-  userid UUID REFERENCES users(id),
+  userid UUID REFERENCES users(id)
   );
 
 CREATE TABLE bookings(

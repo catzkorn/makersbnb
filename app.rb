@@ -59,7 +59,7 @@ class Makersbnb < Sinatra::Base
   end
 
   get "/space/:spaceid" do
-    @viewed_space = SpaceManager.viewed_space(session[:space_id])
+    @viewed_space = SpaceManager.view_space(params[:spaceid])
     erb :'spaces/space'
   end
   run! if app_file == $0
