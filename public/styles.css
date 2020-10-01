@@ -20,3 +20,11 @@ ul {
 body {
   background-color:black;
 }
+
+.logo {
+  display: block;
+  width: 330px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}

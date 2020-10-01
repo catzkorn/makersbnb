@@ -1,10 +1,13 @@
 <head>
-<link rel ='stylesheet' href='styles.css'>
+<link rel ='stylesheet' href='index.css'>
   <title>MAKERS BNB</title>
-  <h1>MAKERS BNB</h1>
 </head>
 <body>
-<form method="post" action="/signup">
+<div>
+<img src='/img/bnb.png' class='logo'>
+ </div>
+
+<form method="post" action="/signup" class='sign-in'>
   <input type="email" name="email" placeholder="Email">
   <input type="text" name="name" placeholder="Enter Your Name">
   <input type="password" name="password" placeholder="Password">
@@ -13,6 +16,6 @@
 </form>
 
 <form method="get" action="/sessions/new">
-  <input type="submit" value="Login">
+  <input type="submit" value="Login" class="Login">
 </form>
 </body>
