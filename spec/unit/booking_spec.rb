@@ -16,7 +16,7 @@ describe Booking do
     end
 
     it "tests if booking has a date of stay" do
-      expect(test.stay_date).to eq "2020-01-20"
+      expect(test.stay_date).to eq Date.new(2020, 1, 20)
     end
   end
 end

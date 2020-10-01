@@ -49,12 +49,12 @@ class Makersbnb < Sinatra::Base
     erb :'spaces/user_spaces'
   end
 
-  post '/sessions/destroy' do
+  post "/sessions/destroy" do
     session.clear
-    redirect('/logout')
+    redirect("/logout")
   end
 
-  get '/logout' do
+  get "/logout" do
     erb :logout
   end
 

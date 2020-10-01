@@ -1,10 +1,12 @@
 require "space_manager"
 require "space"
+require "booking"
+require "booking_management"
 
 describe SpaceManager do
-  let(:space_double) { double :space, name: "london flat", price: "35", description: "a beautiful flat in central london lol", date: ["2020-01-01", "2020-01-02"], space_id: nil, user_id: nil }
+  let(:space_double) { double :space, name: "london flat", price: "35", description: "a beautiful flat in central london lol", space_id: nil, user_id: nil }
 
-  let(:space_double_two) { double :space, name: "manchester flat", price: "30", description: "a cottage in the outskirt", date: ["2020-01-01", "2020-01-02"], space_id: nil, user_id: nil }
+  let(:space_double_two) { double :space, name: "manchester flat", price: "30", description: "a cottage in the outskirt", space_id: nil, user_id: nil }
 
   describe "#.create" do
     it "creates new space with Space class passed in as parameter" do
@@ -12,7 +14,6 @@ describe SpaceManager do
       expect(space.name).to eq "london flat"
       expect(space.price).to eq "$35.00"
       expect(space.description).to eq "a beautiful flat in central london lol"
-      expect(space.date).to eq ["2020-01-01", "2020-01-02"]
     end
   end
 
@@ -22,6 +23,17 @@ describe SpaceManager do
       SpaceManager.create(space_double_two)
       list_spacemanager_all = SpaceManager.all
       expect(list_spacemanager_all[1].name).to eq "manchester flat"
+    end
+  end
+
+  describe "#.availability" do
+    it "returns the days available in a selected month" do
+      user = add_test_user()
+      space = add_test_space(user)
+      booking = BookingManagement.request(Booking.new(space, user, "2020-09-20"))
+      dates = SpaceManager.availability(space, Date.new(2020, 9))
+      expect(dates.length).to eq 29
+      expect(dates[0]).to eq Date.new(2020, 9, 1)
     end
   end
 

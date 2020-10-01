@@ -12,7 +12,6 @@ CREATE TABLE spaces(
   description VARCHAR(240) NOT NULL,
   price MONEY,
   userid UUID REFERENCES users(id),
-  date_availability DATE[] 
   );
 
 CREATE TABLE bookings(
