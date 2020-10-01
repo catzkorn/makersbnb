@@ -7,4 +7,19 @@ class BookingManagement
 
     Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmed"], result[0]["bookingid"])
   end
+
+  def self.confirm_booking(booking, confirmation)
+    case confirmation
+    when true
+      result = DatabaseConnection.query("UPDATE bookings SET confirmation = $1 WHERE bookingid = $2 RETURNING *;", [confirmation, booking.booking_id])
+
+      Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmation"], result[0]["bookingid"])
+    when false
+
+      #What do we want to happen here?
+      result = DatabaseConnection.query("INSERT INTO bookings (confirmation) VALUES ($1) WHERE bookingid = $2 RETURNING *;", [confirmation, booking.booking_id])
+
+      return Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmed"], result[0]["bookingid"])
+    end
+  end
 end
