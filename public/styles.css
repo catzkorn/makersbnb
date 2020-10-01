@@ -1,7 +1,7 @@
 h1 {
   color: white;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 
 input {
@@ -14,7 +14,7 @@ input {
 ul {
   color: white;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 
 body {
@@ -27,4 +27,14 @@ body {
   height: 350px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.signout {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  font-family: sans-serif;
 }

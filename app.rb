@@ -7,7 +7,7 @@ require "./lib/database_connection"
 require "./database_connection_setup.rb"
 
 class Makersbnb < Sinatra::Base
-  enable :sessions
+  enable :sessions, :method_override
   register Sinatra::Flash
   whichdb
 

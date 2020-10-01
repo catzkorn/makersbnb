@@ -1,3 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MakersBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/spaces/new">Add Space</a>
+      <a class="nav-link" href="/spaces/:userid">View My Spaces</a>
+    </div>
+  </div>
+</nav>
+
 <h1>List of your spaces!</h1>
 
 <ul>
@@ -9,7 +23,3 @@
 
   <% end %>
 </ul>
-
-<form action="/spaces" method="get">
-  <input type="submit" value="Back to Homepage" />
-</form>
