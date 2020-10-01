@@ -36,15 +36,23 @@ describe SpaceManager do
       expect(dates[0]).to eq Date.new(2020, 9, 1)
     end
   end
-  
-  describe "#.view_space" do 
-    it " view a single space" do 
+
+  describe "#.view_space" do
+    it " view a single space" do
       user = add_test_user()
       space = add_test_space(user)
       viewed_space = SpaceManager.view_space(space)
       expect(viewed_space.name).to eq "Buckingham Palace"
-    end 
-  end 
+    end
+  end
+
+  describe "#.month_conversion" do
+    it "converts a month string into a Date object" do
+      test = SpaceManager.month_conversion("september")
+      expect(test).to eq Date.new(2020, 9, 1)
+    end
+  end
+
   # describe '#.user_spaces' do
   #   it 'returns a list of all the spaces' do
   #     SpaceManager.create(test)

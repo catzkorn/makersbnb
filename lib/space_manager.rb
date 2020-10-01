@@ -40,13 +40,13 @@ class SpaceManager
     result = DatabaseConnection.query("SELECT * FROM spaces WHERE id = $1;", [space_id])
     Space.new(result[0]["name"], result[0]["price"], result[0]["description"], result[0]["id"], result[0]["userid"])
   end
-end
 
-def month_conversion(month)
-  case month
-  when "september"
-    p Date.new(2020, 9)
-  when "october"
-    p Date.new(2020, 10)
+  def self.month_conversion(month)
+    case month
+    when "september"
+      p Date.new(2020, 9)
+    when "october"
+      p Date.new(2020, 10)
+    end
   end
 end
