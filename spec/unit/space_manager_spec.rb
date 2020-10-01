@@ -29,9 +29,11 @@ describe SpaceManager do
   describe "#.availability" do
     it "returns the days available in a selected month" do
       user = add_test_user()
-      space = add_test_space(user)
-      booking = BookingManagement.request(Booking.new(space, user, "2020-09-20"))
-      dates = SpaceManager.availability(space, Date.new(2020, 9))
+      space_false = add_test_space(user)
+      space_true = add_test_space_true(user)
+      booking_false = BookingManagement.request(Booking.new(space_false, user, "2020-09-20"))
+      booking_true = BookingManagement.request(Booking.new(space_true, user, "2020-09-21", true))
+      dates = SpaceManager.availability(space_true, Date.new(2020, 9))
       expect(dates.length).to eq 29
       expect(dates[0]).to eq Date.new(2020, 9, 1)
     end
@@ -52,14 +54,4 @@ describe SpaceManager do
       expect(test).to eq Date.new(2020, 9, 1)
     end
   end
-
-  # describe '#.user_spaces' do
-  #   it 'returns a list of all the spaces' do
-  #     SpaceManager.create(test)
-  #     SpaceManager.create(test2)
-  #     list_spacemanager_all = SpaceManager.all
-  #     expect(list_spacemanager_all[1].name).to eq 'manchester flat'
-  #   end
-  # end
-
 end
