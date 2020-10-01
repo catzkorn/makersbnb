@@ -11,6 +11,6 @@ feature "View specific space" do
     expect(page).to have_content "Buckingham Palace"
     select "September", from: "months"
     click_button("Submit")
-    expect(page).to have_button "2020, 9, 17"
+    click_button("2020, 9, 17")
   end
 end

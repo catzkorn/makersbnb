@@ -1,8 +1,9 @@
 
 
-
+<h1>Dates available</h1>
 
 <% @available_dates.each do |dates| %>
-    <%=  dates.year %>, <%=  dates.month %>, <%=  dates.day %> <br>
-
+  <form action="/spaces/:spaceid/book" method="get">  
+    <input type="submit" name="booking_date" value="<%=  dates.year %>-<%=  dates.month %>-<%=  dates.day %>">
+    </form>
     <% end %>

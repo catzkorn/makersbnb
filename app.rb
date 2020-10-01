@@ -5,6 +5,8 @@ require "./lib/user"
 require "./lib/space_manager"
 require "./lib/database_connection"
 require "./database_connection_setup.rb"
+require "./lib/booking"
+require "./lib/booking_management"
 
 class Makersbnb < Sinatra::Base
   enable :sessions
@@ -59,14 +61,21 @@ class Makersbnb < Sinatra::Base
   end
 
   get "/space/:spaceid" do
+    session[:spaceid] = params[:spaceid]
     @viewed_space = SpaceManager.view_space(params[:spaceid])
     erb :'spaces/space'
   end
 
-  post "/space/:spaceid/:months" do
+  get "/space/:spaceid/:months" do
     month = SpaceManager.month_conversion(params[:month])
     @available_dates = SpaceManager.availability(params[:spaceid], month)
     erb :'spaces/shitty_erb'
+  end
+
+  get "/spaces/:spaceid/book" do
+    booking = Booking.new(session[:spaceid], session[:user], params[:booking_date])
+    @requested_booking = BookingManagement.request(booking)
+    erb :'spaces/requested_booking'
   end
 
   run! if app_file == $0

@@ -4,7 +4,7 @@
 <%= @viewed_space.price %>
 <%= @viewed_space.description %><br>
 
-<form action="/space/<%= @viewed_space.space_id%>/:months" method="post">
+<form action="/space/<%= @viewed_space.space_id%>/:months" method="get">
 <select name="month" id="months" >
   <option value="september">September</option>
   <option value="october">October</option>
