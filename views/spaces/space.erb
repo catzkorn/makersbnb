@@ -1,14 +1,42 @@
+<head>
+<link rel ='stylesheet' href='/index.css'>
+  <title>MAKERS BNB</title>
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MakersBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/spaces/new">Add Space</a>
+      <a class="nav-link" href="/spaces/:userid">View My Spaces</a>
+    </div>
+  </div>
+</nav>
+
+<ul>
 <h1> Selected space </h1>
 
-<%= @viewed_space.name %>
-<%= @viewed_space.price %>
-<%= @viewed_space.description %><br>
+<form action="/space/<%= @viewed_space.space_id%>/:months" method="get" class='sign-in'>
+<li>
+ <img src='/img/home.png'>
+<h3><%= @viewed_space.name %></h3><br>
+<div><%= @viewed_space.price %></div>
+<div><%= @viewed_space.description %></div>
 
-<form action="/space/<%= @viewed_space.space_id%>/:months" method="get">
+
+
 <select name="month" id="months" >
   <option value="september">September</option>
   <option value="october">October</option>
 </select>
-<input type='submit' value='Submit'>
+
+<input type='submit' value='Submit' class='space_button'>
+</li>
 </form>
+</ul>
 

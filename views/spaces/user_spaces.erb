@@ -1,22 +1,33 @@
+<head>
+<link rel ='stylesheet' href='/index.css'>
+  <title>MAKERS BNB</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MakersBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/spaces/new">Add Space</a>
+      <a class="nav-link" href="/spaces/:userid">View My Spaces</a>
+    </div>
+  </div>
+</nav>
+
+<div class='title'>
 <h1>List of your spaces!</h1>
+</div>
 
-<ul>
+<ul class='spaces'>
   <% @user_spaces.each do |space| %>
-    <%= space.name %> <br>
-    <%= space.price %> <br>
-    <%= space.description %><br>
+  <li>
+    <img src='/img/home.png'><br>
+    <h3><%= space.name %></h3> <br>
+    <div><%= space.price %> </div><br>
+    <div><%= space.description %></div><br>
     <br>
-
+  </li>
   <% end %>
 </ul>
-
-<form action="/spaces" method="get">
-  <input type="submit" value="Back to Homepage" />
-</form>
-
-<select name="date-menu" id="date-menu" >
-  <option value="01-01-2020">01-01-2020</option>
-  <option value="02-01-2020">02-01-2020</option>
-  <option value="03-01-2020">03-01-2020</option>
-  <option value="04-01-2020">04-01-2020</option>
-</select>

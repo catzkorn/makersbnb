@@ -1,0 +1,85 @@
+h1 {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+ul {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+body {
+  background-color:black;
+}
+
+.logo {
+  display: block;
+  width: 330px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.signout {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+li {
+ display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  border-style: solid;
+  border-color: white;
+  list-style: none;
+  width: 70%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+  background-color: #ebebeb;
+  color: 000;
+  padding-top: 20px;
+  padding-bottom: 0px;
+
+}
+
+.spaces{
+  display: block;
+  margin-left: auto;
+  margin-left: auto;
+}
+
+.title {
+  margin: 20px;
+}
+
+h3 {
+  padding-top: 20px;
+}
+
+.space_button {
+  transition-duration: 0.4s;
+}
+
+.space_button:hover {
+  background-color: black;
+  color: white;
+}
+
+.sign-in {
+  
+  color: white;
+}

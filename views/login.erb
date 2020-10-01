@@ -1,9 +1,19 @@
-<%= flash[:notice] %>
+<head>
+<link rel ='stylesheet' href='/index.css'>
+</head>
+<% if flash[:notice] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
+<div>
+<img src='/img/bnb.png' class='logo'>
+ </div>
 
 <h1>Login</h1>
-<form action='/sessions' method='post'>
-  <input type='email' name='email'>
-  <input type='password' name='password'>
-  <input type='submit' value='login'>
-</form>
+  <form action='/sessions' method='post' class='sign-in'>
+    <input type='email' name='email' placeholder="Email">
+    <input type='password' name='password' placeholder="Password">
+    <input type='submit' value='login'>
+  </form>

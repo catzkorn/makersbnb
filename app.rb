@@ -9,7 +9,7 @@ require "./lib/booking"
 require "./lib/booking_management"
 
 class Makersbnb < Sinatra::Base
-  enable :sessions
+  enable :sessions, :method_override
   register Sinatra::Flash
   whichdb
 
