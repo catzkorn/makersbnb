@@ -43,10 +43,30 @@ class SpaceManager
 
   def self.month_conversion(month)
     case month
+    when "january"
+      Date.new(2020, 1)
+    when "february"
+      Date.new(2020, 2)
+    when "march"
+      Date.new(2020, 3)
+    when "april"
+      Date.new(2020, 4)
+    when "may"
+      Date.new(2020, 5)
+    when "june"
+      Date.new(2020, 6)
+    when "july"
+      Date.new(2020, 7)
+    when "august"
+      Date.new(2020, 8)
     when "september"
       Date.new(2020, 9)
     when "october"
       Date.new(2020, 10)
+    when "november"
+      Date.new(2020, 11)
+    when "december"
+      Date.new(2020, 12)
     end
   end
 end
