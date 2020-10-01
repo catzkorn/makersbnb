@@ -64,7 +64,7 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/space/:spaceid/:months" do
-    month = month_conversion(params[:month])
+    month = SpaceManager.month_conversion(params[:month])
     @available_dates = SpaceManager.availability(params[:spaceid], month)
     erb :'spaces/shitty_erb'
   end

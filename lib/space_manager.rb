@@ -44,9 +44,9 @@ class SpaceManager
   def self.month_conversion(month)
     case month
     when "september"
-      p Date.new(2020, 9)
+      Date.new(2020, 9)
     when "october"
-      p Date.new(2020, 10)
+      Date.new(2020, 10)
     end
   end
 end
