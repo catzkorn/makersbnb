@@ -1,0 +1,14 @@
+<h1> Selected space </h1>
+
+<%= @viewed_space.name %>
+<%= @viewed_space.price %>
+<%= @viewed_space.description %><br>
+
+<form action="/space/<%= @viewed_space.space_id%>/:months" method="get">
+<select name="month" id="months" >
+  <option value="september">September</option>
+  <option value="october">October</option>
+</select>
+<input type='submit' value='Submit'>
+</form>
+

@@ -1,12 +1,16 @@
 require "space_manager"
 require "space"
+require "booking"
+require "booking_management"
 
 describe SpaceManager do
-  let(:test) { Space.new("london flat", "35", "a beautiful flat in central london lol") }
-  let(:test2) { Space.new("manchester flat", "30", "a cottage in the outskirt") }
+  let(:space_double) { double :space, name: "london flat", price: "35", description: "a beautiful flat in central london lol", space_id: nil, user_id: nil }
+
+  let(:space_double_two) { double :space, name: "manchester flat", price: "30", description: "a cottage in the outskirt", space_id: nil, user_id: nil }
+
   describe "#.create" do
     it "creates new space with Space class passed in as parameter" do
-      space = SpaceManager.create(test)
+      space = SpaceManager.create(space_double)
       expect(space.name).to eq "london flat"
       expect(space.price).to eq "$35.00"
       expect(space.description).to eq "a beautiful flat in central london lol"
@@ -15,10 +19,37 @@ describe SpaceManager do
 
   describe "#.all" do
     it "returns a list of all the spaces" do
-      SpaceManager.create(test)
-      SpaceManager.create(test2)
+      SpaceManager.create(space_double)
+      SpaceManager.create(space_double_two)
       list_spacemanager_all = SpaceManager.all
       expect(list_spacemanager_all[1].name).to eq "manchester flat"
+    end
+  end
+
+  describe "#.availability" do
+    it "returns the days available in a selected month" do
+      user = add_test_user()
+      space = add_test_space(user)
+      booking = BookingManagement.request(Booking.new(space, user, "2020-09-20"))
+      dates = SpaceManager.availability(space, Date.new(2020, 9))
+      expect(dates.length).to eq 29
+      expect(dates[0]).to eq Date.new(2020, 9, 1)
+    end
+  end
+
+  describe "#.view_space" do
+    it " view a single space" do
+      user = add_test_user()
+      space = add_test_space(user)
+      viewed_space = SpaceManager.view_space(space)
+      expect(viewed_space.name).to eq "Buckingham Palace"
+    end
+  end
+
+  describe "#.month_conversion" do
+    it "converts a month string into a Date object" do
+      test = SpaceManager.month_conversion("september")
+      expect(test).to eq Date.new(2020, 9, 1)
     end
   end
 
