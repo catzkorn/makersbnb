@@ -19,7 +19,6 @@ class Makersbnb < Sinatra::Base
 
   post "/signup" do
     exists = UserManagement.user_exists?(params[:email])
-    p exists
     if exists == false 
       user = UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
       session[:user] = user.user_id

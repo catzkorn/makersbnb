@@ -9,9 +9,9 @@ feature 'signup' do
   end
 
   scenario 'a user cannot sign-up if they are already signed up' do
-    visit('/')
     add_test_user
-    fill_in('email', with: 'test@test.co.uk')
+    visit('/')
+    fill_in('email', with: 'test@test.com')
     fill_in('password', with: 'password123')
     fill_in('name', with: 'Test McTestason')
     click_button('Submit')
