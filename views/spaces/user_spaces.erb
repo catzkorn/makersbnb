@@ -11,7 +11,7 @@
     <div class="navbar-nav">
       <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
       <a class="nav-link" href="/spaces/new">Add Space</a>
-      <a class="nav-link" href="/spaces/:userid">View My Spaces</a>
+      <a class="nav-link" href="<%= "/spaces/" + session[:user] %>">View My Spaces</a>
     </div>
   </div>
 </nav>
@@ -46,11 +46,11 @@
     <div><%= booking["booking"].stay_date %></div><br>
     <br>
 
-    <form action="/space/:userid/approve" method="post">
+    <form action="<%= "/space/" + session[:user] +"/approve"%>" method="post">
     <input type="hidden" name="booking_id" value="<%= booking["booking"].booking_id%>"/>
     <input type="submit" value="Accept Booking" class='space_button' />
     </form>
-    <form action="/space/:userid/deny" method="post">
+    <form action="<%= "/space/" + session[:user] +"/deny"%>" method="post">
     <input type="hidden" name="booking_id" value="<%= booking["booking"].booking_id%>"/>
     <input type="submit" value="Deny Booking" class='space_button' />
     </form>

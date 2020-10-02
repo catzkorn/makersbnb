@@ -18,7 +18,8 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/signup" do
-    UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
+    user = UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
+    session[:user] = user.user_id
     flash[:notice] = "Thank you for signing up - you are now logged in."
     redirect("/spaces")
   end
@@ -39,7 +40,8 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/spaces/new/add" do
-    new_space = Space.new(params[:name], params[:price], params[:description], nil, session[:user])
+    p session
+    new_space = Space.new(params[:name], params[:price], params[:description], session[:user])
     SpaceManager.create(new_space)
     redirect "/spaces"
   end
@@ -57,12 +59,12 @@ class Makersbnb < Sinatra::Base
 
   post "/space/:userid/approve" do
     BookingManagement.confirm_booking(params[:booking_id], true)
-    redirect "/space/:userid"
+    redirect "/spaces/" + params[:userid]
   end
 
   post "/space/:userid/deny" do
     BookingManagement.confirm_booking(params[:booking_id], false)
-    redirect "/space/:userid"
+    redirect "/spaces/" + params[:userid]
   end
 
   post "/sessions/destroy" do
