@@ -24,8 +24,8 @@ Welcome to MakersBNB!
 
 ## Members
 + [Farhaan Ali](https://github.com/farhaan-ali)
- + [Charlotte  Brandhorst-Satzkorn](https://catzkorn.dev)
- + [Courtenay Donald](https://github.com/c-donald)
++ [Charlotte  Brandhorst-Satzkorn](https://catzkorn.dev)
++ [Courtenay Donald](https://github.com/c-donald)
 + [Cristina Fujiname](https://github.com/cfujiname)
 + [Connor Worthington](https://github.com/CRTW26)
 
@@ -33,7 +33,7 @@ Welcome to MakersBNB!
 
 ## Team Principles
 + Don’t Ignore Testing
- + Always ask for help if you are stuck
++ Always ask for help if you are stuck
 + The project is for everyone - Everyone understanding the project is important
 + Overtime - No major implementation changes after 6pm unless otherwise agreed
 + Spread knowledge
@@ -61,6 +61,20 @@ Separate sets of user stories were created for each 2 day sprint.
 
 ### Sprint 2
 ![Sprint 2 user stories](https://imgur.com/hrT3Auf.jpg)
+
+## Technologies used 
+
+### Frontend
+
+The frontend was implemented using the Bootstrap Framework, HTML and CSS. 
+
+Sinatra was used as part of our model controller view framework. 
+
+Frontend testing was achieved by using the Capybara/rspec testing framework.
+
+### Backend
+
+The backend was designed using Ruby and Postgres. Testing for backend methodologies was achieved using the rspec testing framework. 
 
 ## Class Diagrams
 
