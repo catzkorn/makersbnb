@@ -18,10 +18,17 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/signup" do
-    user = UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
-    session[:user] = user.user_id
-    flash[:notice] = "Thank you for signing up - you are now logged in."
-    redirect("/spaces")
+    exists = UserManagement.user_exists?(params[:email])
+    p exists
+    if exists == false 
+      user = UserManagement.sign_up(User.new(params[:email], params[:name], params[:password]))
+      session[:user] = user.user_id
+      flash[:notice] = "Thank you for signing up - you are now logged in."
+      redirect("/spaces")
+    elsif exists == true 
+        flash[:notice] = "User already exists"
+        redirect("/")
+    end
   end
 
   get "/sessions/new" do

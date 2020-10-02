@@ -3,6 +3,11 @@
   <title>MAKERS BNB</title>
 </head>
 <body>
+<% if flash[:notice] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 <div>
 <img src='/img/bnb.png' class='logo'>
  </div>
