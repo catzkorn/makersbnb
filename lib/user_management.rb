@@ -19,8 +19,11 @@ class UserManagement
 
   def self.login(email, password)
     data = UserManagement.password_match?(email, password)
-    raise 'password doesn\'t match' if data == false
+    if data == false 
+      return false
+    else 
     User.new(data["email"], data["name"], data["password"], data["id"])
+    end 
   end
 
   def self.password_match?(email, user_password)
