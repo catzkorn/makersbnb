@@ -11,10 +11,10 @@ class UserManagement
 
   def self.sign_up(user)
     result = DatabaseConnection.query(
-      "INSERT INTO users (email, name, password) 
-    VALUES ($1, $2, crypt($3, gen_salt('bf') )) RETURNING *;", [user.email, user.name, user.password]
-    )
-    User.new(result[0]["email"], result[0]["name"], result[0]["password"], result[0]["id"])
+        "INSERT INTO users (email, name, password) 
+      VALUES ($1, $2, crypt($3, gen_salt('bf') )) RETURNING *;", [user.email, user.name, user.password]
+      )
+      User.new(result[0]["email"], result[0]["name"], result[0]["password"], result[0]["id"])
   end
 
   def self.login(email, password)
@@ -30,4 +30,10 @@ class UserManagement
     result = DatabaseConnection.query("SELECT * FROM users WHERE email = $1 AND password = crypt($2, password);", [email, user_password])
     result.count == 1 ? result[0] : false
   end
+
+  def self.user_exists?(email)
+      result = DatabaseConnection.query("SELECT * FROM users WHERE email = $1", [email])
+      result.count == 1 ? true : false  
+  end 
+
 end
