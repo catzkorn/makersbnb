@@ -15,7 +15,7 @@ describe BookingManagement do
         user = add_test_user()
         space = add_test_space(user)
         booking = BookingManagement.request(Booking.new(space, user, "2020-09-20"))
-        confirmed_booking = BookingManagement.confirm_booking(booking, true)
+        confirmed_booking = BookingManagement.confirm_booking(booking.booking_id, true)
         expect(confirmed_booking.confirmed).to be_truthy
       end
     end

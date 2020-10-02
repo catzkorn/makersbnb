@@ -8,16 +8,16 @@ CREATE TABLE users(
 
 CREATE TABLE spaces(
   id SERIAL PRIMARY KEY, 
-  name VARCHAR(30),
+  name VARCHAR(30) NOT NULL,
   description VARCHAR(240) NOT NULL,
-  price MONEY,
-  userid UUID REFERENCES users(id)
+  price MONEY NOT NULL,
+  userid UUID NOT NULL REFERENCES users(id)
   );
 
 CREATE TABLE bookings(
   bookingid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  spaceid SERIAL REFERENCES spaces(id),
-  guestID UUID REFERENCES users(id),
+  spaceid SERIAL NOT NULL REFERENCES spaces(id),
+  guestID UUID NOT NULL REFERENCES users(id),
   stay_date DATE NOT NULL,
-  confirmation BOOLEAN DEFAULT false
+  confirmation BOOLEAN 
 );
