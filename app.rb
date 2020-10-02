@@ -40,7 +40,6 @@ class Makersbnb < Sinatra::Base
   end
 
   post "/spaces/new/add" do
-    p session
     new_space = Space.new(params[:name], params[:price], params[:description], session[:user])
     SpaceManager.create(new_space)
     redirect "/spaces"
