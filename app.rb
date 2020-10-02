@@ -92,7 +92,6 @@ class Makersbnb < Sinatra::Base
 
   get "/bookings/:user" do
     @mybookings = BookingManagement.user_bookings(session[:user])
-    p @mybookings
     erb :'spaces/mybookings'
   end
 
