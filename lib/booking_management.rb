@@ -33,7 +33,7 @@ class BookingManagement
     when false
 
       #What do we want to happen here?
-      result = DatabaseConnection.query("INSERT INTO bookings (confirmation) VALUES ($1) WHERE bookingid = $2 RETURNING *;", [confirmation, booking.booking_id])
+      result = DatabaseConnection.query("UPDATE bookings SET confirmation = $1 WHERE bookingid = $2 RETURNING *;", [confirmation, booking_id])
 
       return Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmed"], result[0]["bookingid"])
     end

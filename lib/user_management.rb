@@ -10,10 +10,11 @@ class UserManagement
   end
 
   def self.sign_up(user)
-    DatabaseConnection.query(
+    result = DatabaseConnection.query(
       "INSERT INTO users (email, name, password) 
-    VALUES ($1, $2, crypt($3, gen_salt('bf') ));", [user.email, user.name, user.password]
+    VALUES ($1, $2, crypt($3, gen_salt('bf') )) RETURNING *;", [user.email, user.name, user.password]
     )
+    User.new(result[0]["email"], result[0]["name"], result[0]["password"], result[0]["id"])
   end
 
   def self.login(email, password)
