@@ -32,7 +32,7 @@ class UserManagement
   end
 
   def self.user_exists?(email)
-      result = DatabaseConnection.query("SELECT * FROM users WHERE email = $1", [email])
+      result = DatabaseConnection.query("SELECT * FROM users WHERE email = $1;", [email])
       result.count == 1 ? true : false  
   end 
 
