@@ -24,8 +24,6 @@ class SpaceManager
     return month_array
   end
 
-  # 2001-01-01 00:00:00
-
   def self.create(space_object)
     result = DatabaseConnection.query("INSERT INTO spaces (name, description, price, userid) VALUES ($1, $2, $3, $4) RETURNING id, name, description, price, userid;", [space_object.name, space_object.description, space_object.price, space_object.user_id])
     Space.new(result[0]["name"], result[0]["price"], result[0]["description"], result[0]["userid"], result[0]["id"])

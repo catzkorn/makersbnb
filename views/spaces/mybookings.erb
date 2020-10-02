@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MakersBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/spaces">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/spaces/new">Add Space</a>
+      <a class="nav-link" href="<%= "/spaces/" + session[:user] %>">View My Spaces</a>
+      <a class="nav-link" href="/bookings/<%= session[:user]%>">My Bookings</a>
+    </div>
+  </div>
+</nav>
+
+<ul class='bookings'>
+  <% @mybookings.each do |booking| %>
+    <% if booking["booking"].confirmed == 't'%>
+        <h1>Confirmed Bookings</h1> 
+
+        <li>
+          <img src='/img/home.png'><br>
+          <h3><%= booking["space"].name %></h3> <br>
+          <div><%= booking["guest"].name %> </div><br>
+          <div><%= booking["booking"].stay_date %></div><br>
+          <br>
+        </li>
+
+    <%end%>
+        
+  
+  <% end %>
+</ul>
+
+<ul class='bookings'>
+  <% @mybookings.each do |booking| %>
+    <% if booking["booking"].confirmed == nil%>
+       <h1>Pending Bookings</h1>
+
+        <li>
+            <img src='/img/home.png'><br>
+            <h3><%= booking["space"].name %></h3> <br>
+            <div><%= booking["guest"].name %> </div><br>
+            <div><%= booking["booking"].stay_date %></div><br>
+            <br>
+        </li>
+
+    <%end%>
+        
+  
+  <% end %>
+</ul>
+
+<ul class='bookings'>
+  <% @mybookings.each do |booking| %>
+    <% if booking["booking"].confirmed == 'f'%>
+        <h1>Denied Bookings</h1>
+        <li>
+            <img src='/img/home.png'><br>
+            <h3><%= booking["space"].name %></h3> <br>
+            <div><%= booking["guest"].name %> </div><br>
+            <div><%= booking["booking"].stay_date %></div><br>
+            <br>
+        </li>
+
+    <%end%>
+        
+  <% end %>
+</ul>
