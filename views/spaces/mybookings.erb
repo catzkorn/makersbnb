@@ -14,9 +14,9 @@
 </nav>
 
 <ul class='bookings'>
+<h1>Confirmed Bookings</h1>
   <% @mybookings.each do |booking| %>
-    <% if booking["booking"].confirmed == 't'%>
-        <h1>Confirmed Bookings</h1> 
+    <% if booking["booking"].confirmed == 't'%> 
 
         <li>
           <img src='/img/home.png'><br>
@@ -33,9 +33,9 @@
 </ul>
 
 <ul class='bookings'>
+<h1>Pending Bookings</h1>
   <% @mybookings.each do |booking| %>
     <% if booking["booking"].confirmed == nil%>
-       <h1>Pending Bookings</h1>
 
         <li>
             <img src='/img/home.png'><br>
@@ -52,9 +52,9 @@
 </ul>
 
 <ul class='bookings'>
+<h1>Denied Bookings</h1>
   <% @mybookings.each do |booking| %>
     <% if booking["booking"].confirmed == 'f'%>
-        <h1>Denied Bookings</h1>
         <li>
             <img src='/img/home.png'><br>
             <h3><%= booking["space"].name %></h3> <br>
