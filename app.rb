@@ -90,5 +90,11 @@ class Makersbnb < Sinatra::Base
     erb :'spaces/requested_booking'
   end
 
+  get "/bookings/:user" do
+    @mybookings = BookingManagement.user_bookings(session[:user])
+    p @mybookings
+    erb :'spaces/mybookings'
+  end
+
   run! if app_file == $0
 end

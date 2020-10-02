@@ -38,4 +38,20 @@ class BookingManagement
       return Booking.new(result[0]["spaceid"], result[0]["guestid"], result[0]["stay_date"], result[0]["confirmed"], result[0]["bookingid"])
     end
   end
+
+  def self.user_bookings(userid)
+    bookings = []
+
+    result = DatabaseConnection.query("SELECT bookings.*, users.*, users.name AS user_name, spaces.* FROM bookings LEFT JOIN spaces ON bookings.spaceid = spaces.id LEFT JOIN users ON bookings.guestid = users.id WHERE spaces.userid = $1;", [userid])
+
+    result.each { |booking|
+      bookings << {
+        "guest" => User.new(booking["email"], booking["user_name"]),
+        "space" => Space.new(booking["name"], booking["price"], booking["description"], booking["userid"], booking["space_id"]),
+        "booking" => Booking.new(booking["spaceid"], booking["guestid"], booking["stay_date"], booking["confirmation"], booking["bookingid"]),
+      }
+    }
+
+    return bookings
+  end
 end
