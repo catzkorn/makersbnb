@@ -16,5 +16,17 @@ describe UserManagement do
       authenticated_user = UserManagement.login("test@test.com", "password123")
       expect(authenticated_user.email).to eq "test@test.com"
     end
+    it "does not allow user to login with incorrect password" do
+      user = UserManagement.sign_up(user_double)
+      authenticated_user = UserManagement.login("test@test.com", "password23")
+      expect(authenticated_user).to eq false
+    end
+
+    it "does not allow user to login with incorrect email" do
+      user = UserManagement.sign_up(user_double)
+      authenticated_user = UserManagement.login("test@tst.com", "password123")
+      expect(authenticated_user).to eq false
+    end
+
   end
 end
