@@ -164,7 +164,7 @@ Each database has 3 tables:
 + id
 + email
 + name
-+ password)
++ password
 
 ### Bookings 
 + bookingid
