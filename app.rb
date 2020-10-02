@@ -30,9 +30,14 @@ class Makersbnb < Sinatra::Base
 
   post "/sessions" do
     user = UserManagement.login(params[:email], params[:password])
-    session[:user] = user.user_id
-    flash[:notice] = "You are logged in."
-    redirect("/spaces")
+    if user == false 
+      flash[:notice] = "Incorrect email or password"
+      redirect('/sessions/new')
+    else 
+      session[:user] = user.user_id
+      flash[:notice] = "You are logged in."
+      redirect("/spaces")
+    end 
   end
 
   get "/spaces/new" do
